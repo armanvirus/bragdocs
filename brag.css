@@ -1,0 +1,211 @@
+:root, html[data-theme="light"] {
+    --logo: black;
+    --name: black;
+    --entry-title: black;
+    --date: #BDBDBD;
+    --text: #676a6c;
+    --entry-line: #f1f1f1;
+    --entry-circle: #ddd;
+    --background: white;
+    --text-code: grey;
+    --code-block: rgba(0,0,0,0.05);
+    --link-text: #676a6c;
+    --link-hover: orange;
+    --quote-block-edge: rgba(255, 165, 0, 0.5);
+    --quote-block-text: #676a6c;
+    --table-border: #676a6c;
+    --footer: #BDBDBD;
+    --tag: #BDBDBD;
+  }
+html[data-theme="dark"] {
+    --logo: #FFF;
+    --name: #FFF;
+    --entry-title: #dedede;
+    --date: rgba(255,255,255,0.3);
+    --text: #999999;
+    --entry-line: rgba(255,255,255,0.2);
+    --entry-circle: rgba(255,255,255,0.3);
+    --background: #121212;
+    --code-text: rgba(255,255,255,0.5);
+    --code-block: rgba(255,255,255,0.1);
+    --link-text: rgba(255,255,255,0.5);
+    --link-hover: orange;
+    --quote-block-edge: rgb(255, 165, 0);
+    --quote-block-text: rgba(255, 165, 0,0.5);
+    --table-border: #999999;
+    --footer: rgba(255,255,255,0.3);
+    --tag: rgba(255,255,255,0.3);
+  }
+body {
+    font-family: "open sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 13px;
+    color: var(--text);
+    background-color: var(--background);
+    margin: 0;
+    height: 100vh;
+  }
+  
+  footer {
+    margin: 0 auto;
+    max-width: 500px;
+    padding-bottom: 1.5em;
+    text-align: center;
+    color: var(--footer);
+    padding-top: 2em;
+    margin-top: 2em;
+  }
+  
+  /* Bragdoc Logo */
+  
+  .bragdoc_header {
+    margin: 0;
+    padding: 1em;
+    font-size: 1.5em;
+    color: var(--logo)
+  }
+  
+  /* Bragdoc Body */
+  
+  .bragdoc_section {
+    height: 100%;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    margin: 0;
+    padding: 0;
+  }
+  .bragdoc_profile {
+    padding-top: 3em;
+    padding-bottom: 2em;
+  }
+  
+  .bragdoc_photo {
+    width: 8em;
+    border-radius: 100%;
+    padding: 0;
+    height: 8em;
+    object-fit: cover;
+  }
+  
+  .bragdoc_name {
+    color: var(--name);
+    margin-bottom: 0.25em;
+  }
+  
+  .bragdoc_icon {
+    font-family: "Segoe UI Emoji", Times, serif;
+  }
+  
+  .bragdoc_container {
+    max-width: 800px;
+    margin: 0 0 0 30em;
+    height: 100%;
+  }
+  
+  .bragdoc_profile_role {
+    margin: 0;
+  }
+  .bragdoc_entry {
+    position: relative;
+  }
+  
+  .bragdoc_entry:first-child {
+    margin-top: 0;
+  }
+  
+  .bragdoc_entry:before {
+    height: 100%;
+    position: absolute;
+    background-color: var(--entry-line);
+    width: 2px;
+    content: "";
+    top: 30px;
+  }
+  
+  .bragdoc_entry:last-child:before {
+    background-color: var(--background);
+  }
+  
+  .bragdoc_taglist {
+    margin-left: 1em;
+    padding: 1em;
+  }
+  
+  .bragdoc_taglist > * {
+    border: 1px solid var(--tag);
+    padding: 0.25em 0.5em 0.25em 0.5em;
+    border-radius: 0.5em;
+    margin-right: 1em;
+  }
+  
+  /* Entry Content */
+  
+  .bragdoc_entry_block {
+    margin-left: 1em;
+    padding: 1em;
+  }
+  
+  .bragdoc_entry_title {
+    margin-top: 4px;
+    color: var(--entry-title);
+    font-size: 1.5em;
+  }
+  
+  .bragdoc_entry_date {
+    line-height: 3em;
+    color: var(--date);
+  }
+  
+  /* Bragdoc milestone circle */
+  
+  .bragdoc_entry_milestone {
+    position: absolute;
+    height: 5px;
+    width: 5px;
+    border: 2px solid var(--entry-circle);
+    background-color: var(--background);
+    left: 0;
+    top: 30px;
+    margin-top: -2px;
+    margin-left: -3px;
+    border-radius: 100px;
+  }
+  
+  /* Bragdoc Entry Content */
+  
+  .bragdoc_entry_content > * {
+    margin-bottom: 0.5em;
+    margin-left: 0;
+  }
+  
+  .bragdoc_entry_content > h1 {
+    font-size: 1.15em;
+  }
+  
+  .bragdoc_entry_content > h2, h3, h4, h5, h6 {
+    font-size: 1em;
+    color: var(--text);
+  }
+
+  @media only screen and (max-width: 1400px) {
+
+    .bragdoc_container {
+      /* Center the bragdoc*/
+      margin: 0 auto;
+    }
+  
+    .bragdoc_entry_title {
+      font-size: 1.25em;
+    }
+  }
+  
+  @media only screen and (max-width: 870px) {
+  
+    .bragdoc_container {
+      padding-left: 2em;
+      padding-right: 2em;
+    }
+  
+    .bragdoc_entry_title {
+      font-size: 1.15em;
+    }
+  }
